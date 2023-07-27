@@ -40,7 +40,10 @@ Output in [JSON](https://www.w3schools.com/js/js_json_intro.asp)
 
 ## Google Maps API
 
+```console
 curl -L -X GET 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key=$GCP_KEY_ID'
+```
+
 
 ```python
 import requests
