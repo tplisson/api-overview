@@ -186,3 +186,4 @@ print(addressvalidation_result)
 
 [Online REST & SOAP API Testing Tool](https://reqbin.com)
 
+[Palo Alto Networks Prisma Cloud APIs](https://pan.dev/prisma-cloud/api/)
