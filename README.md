@@ -20,6 +20,13 @@ sequenceDiagram;
     API ->> Client: HTTP response 200 OK + JSON "{ metadata }"
 ```
 
+For example:
+
+- `GET /users`: Retrieve a list of users.
+- `GET /users/{id}`: Retrieve a specific user by ID.
+- `POST /users`: Create a new user.
+- `PUT /users/{id}`: Update an existing user by ID.
+- `DELETE /users/{id}`: Delete a user by ID.
 
 ## Key Concepts
 
@@ -65,7 +72,8 @@ sequenceDiagram;
 - PUT
 - PATCH
 - DELETE -->
-
+  
+  
 ## API Tools  
 
 ### cURL  
@@ -105,9 +113,17 @@ Output in [JSON](https://www.w3schools.com/js/js_json_intro.asp)
 
 
 ### POSTMan  
+https://www.postman.com
 
+<p align="center">
+  <img src="images/postman-get-resource-types.gif">
+</p>
+<br/>
 
 ## Google Maps API
+
+Here's an example of Google Maps API
+
 
 ```console
 curl -L -X GET 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key=$GCP_KEY_ID'
@@ -115,22 +131,40 @@ curl -L -X GET 'https://maps.googleapis.com/maps/api/place/findplacefromtext/jso
 
 
 ```python
-import requests
+import googlemaps
+# from datetime import datetime
+import os
+import json
 
-YOUR_API_KEY = os.environ["GCP_KEY_ID"]
+MY_API_KEY = os.environ["GMAPS_KEY"]
+gmaps = googlemaps.Client(key=MY_API_KEY)
 
-url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key=YOUR_API_KEY"
+# Geocoding an address
+geocode_result = gmaps.geocode('1600 Amphitheatre Parkway, Mountain View, CA')
+print(geocode_result)
 
-payload = {}
-headers = {}
+# Look up an address with reverse geocoding
+reverse_geocode_result = gmaps.reverse_geocode((40.714224, -73.961452))
+print(reverse_geocode_result)
 
-response = requests.request("GET", url, headers=headers, data=payload)
+# Request directions via public transit
+now = datetime.now()
+directions_result = gmaps.directions("Sydney Town Hall",
+                                     "Parramatta, NSW",
+                                     mode="transit",
+                                     departure_time=now)
+print(directions_result)
 
-print(response.text)
+# Validate an address with address validation
+addressvalidation_result =  gmaps.addressvalidation(['1600 Amphitheatre Pk'], 
+                                                    regionCode='US',
+                                                    locality='Mountain View', 
+                                                    enableUspsCass=True)
+print(addressvalidation_result)
 ```
 
 
-## Resources
+## Additional Resources
 
 [Amazon API Gateway Documentation](https://docs.aws.amazon.com/apigateway/)  
 
@@ -139,3 +173,4 @@ print(response.text)
 [Google APIs Explorer](https://developers.google.com/apis-explorer)
 
 [Online REST & SOAP API Testing Tool](https://reqbin.com)
+
