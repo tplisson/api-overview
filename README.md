@@ -14,10 +14,10 @@ sequenceDiagram;
   
 
 
-    Client ->> API: markdown["HTTP request PUT /endpoint2 + data"]
+    Client ->> API: markdown["HTTP request POST /endpoint2 + data in body 
     API ->> Server: create configuration
     Server ->> API: retrieve results
-    API ->> Client: HTTP response 200 OK + JSON "{ metadata }"
+    API ->> Client: HTTP response 200 OK + JSON metadata
 ```
 
 For example:
@@ -54,24 +54,6 @@ For example:
   
 - **Security**: REST APIs can use standard HTTP security mechanisms such as SSL/TLS encryption for secure communication.
 
-
-<!-- 
-<p align="center">
-  <img src="rest_api.jpg">
-</p>
-<br/>
-
-3 main components: 
-1. URL endpoint
-2. HTTP verb or API operations
-3. Body -->
-
-<!-- API operations
-- GET
-- POST
-- PUT
-- PATCH
-- DELETE -->
   
   
 ## API Tools  
