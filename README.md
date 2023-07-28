@@ -126,17 +126,47 @@ Here's an example of Google Maps API
 
 
 ```console
-curl -L -X GET 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key=$GCP_KEY_ID'
+curl -L -X GET 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key=<YOUR_GOOGLE_MAPS_API_KEY_GOES_HERE>'
+{
+   "candidates" : [
+      {
+         "formatted_address" : "140 George St, The Rocks NSW 2000, Australie",
+         "geometry" : {
+            "location" : {
+               "lat" : -33.8599358,
+               "lng" : 151.2090295
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -33.85824377010728,
+                  "lng" : 151.2104386798927
+               },
+               "southwest" : {
+                  "lat" : -33.86094342989272,
+                  "lng" : 151.2077390201073
+               }
+            }
+         },
+         "name" : "Museum of Contemporary Art Australia",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "rating" : 4.4
+      }
+   ],
+   "status" : "OK"
+}
 ```
 
-
+Sample Python script to 
 ```python
 import googlemaps
-# from datetime import datetime
+from datetime import datetime
 import os
 import json
 
 MY_API_KEY = os.environ["GMAPS_KEY"]
+
 gmaps = googlemaps.Client(key=MY_API_KEY)
 
 # Geocoding an address
