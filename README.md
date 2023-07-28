@@ -77,21 +77,20 @@ Getting some metadata (read or `GET` operation)
 curl <URL>
 ```
 
-Creating a resource (create or `PUT` operation)
-```console
-curl -X PUT <URL>
-     -d "PUT request data"
-```
-
-
+For example:
 ```console
 curl https://catfact.ninja/fact
-```
-
-```console
 {"fact":"Neutering a cat extends its life span by two or three years.","length":60}
 ```
 
+
+Creating a resource (create or `POST` operation)
+```console
+curl -X POST <URL>
+     -d "request data in JSON"
+```
+
+For example:
 ```console
 curl -X POST https://reqbin.com/echo/post/json \
    -H 'Content-Type: application/json' \
