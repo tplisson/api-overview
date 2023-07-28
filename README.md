@@ -35,11 +35,11 @@ flowchart LR
 ``````
 
 ```mermaid
-graph LR
-    A[Client] -- API: HTTP request `GET /endpoint/` --> B[API] 
-    B[API] -- request metadata --> C[Server]
-    C[Server] -- retrieve metadata --> B[API]
-    B[API] -- HTTP response `JSON metadata` --> A[Client]
+graph LR;
+    A[Client] -- API: HTTP request `GET /endpoint/` --> B[API];
+    B[API] -- request metadata --> C[Server];
+    C[Server] -- retrieve metadata --> B[API];
+    B[API] -- HTTP response `JSON metadata` --> A[Client];
 ```
 
 ```mermaid
