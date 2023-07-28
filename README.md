@@ -14,10 +14,8 @@ flowchart LR;
 
 ```mermaid
   graph TD;
-      A-->B; Client 
-      B-->C;
-      <!-- C-->D; -->
-      <!-- C-->D; -->
+      Client-->API; 
+      API-->Server;
 ```
 
 ```mermaid
