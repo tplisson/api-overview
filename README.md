@@ -48,7 +48,9 @@ sequenceDiagram;
     API ->> Server: request metadata
     Server ->> API: retrieve metadata
     API ->> Client: HTTP response 200 OK + `JSON metadata`
+  
 
+  
     Client ->> API: markdown["HTTP request `PUT /endpoint2`"]
     API ->> Server: request metadata
     Server ->> API: retrieve metadata
