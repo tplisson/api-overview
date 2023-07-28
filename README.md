@@ -4,6 +4,15 @@
 
 REST (Representational State Transfer) is an architectural style used to design networked applications, specifically web services. RESTful APIs (Application Programming Interfaces) are a set of guidelines and principles that adhere to the REST architectural style. They enable communication and interaction between various software systems over the internet.
 
+
+```mermaid
+%%{init: {"flowchart": {"htmlLabels": false}} }%%
+flowchart LR
+    markdown["HTTP request:"]
+    newLines["`GET /endoint`"]
+    markdown --> newLines
+```
+
 ```mermaid
 flowchart LR;
     Client---|HTTP request: `GET /endoint` |API
