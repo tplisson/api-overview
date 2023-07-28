@@ -35,7 +35,7 @@ flowchart LR
 ``````
 
 ```mermaid
-  graph TD
+  graph LR
     A[Client] -- API: HTTP request `GET /endpoint/` --> B[API] 
     B[API] -- request metadata --> C[Server]
     C[Server] -- retrieve metadata --> B[API]
