@@ -23,7 +23,7 @@ sequenceDiagram;
 
 ## Key Concepts
 
-- **Resources**: In REST, everything is considered a resource, which can be a data object, a service, or any other type of information. Each resource is uniquely identified by a URL (Uniform Resource Locator).  
+- **Resources**: In REST, everything is considered a resource, which can be a data object, a service, or any other type of information. Each resource is uniquely identified by a URL (Uniform Resource Locator), also called an *endpoint*.  
 
 - **HTTP Methods**: REST APIs utilize standard `HTTP` methods to perform operations on resources. The most commonly used methods are:
     - `GET`: Used to retrieve data from the server.
@@ -59,24 +59,37 @@ sequenceDiagram;
 2. HTTP verb or API operations
 3. Body -->
 
-API operations
+<!-- API operations
 - GET
 - POST
 - PUT
 - PATCH
-- DELETE
+- DELETE -->
 
 ## API Tools  
 
 ### cURL  
 
+Use [cURL](https://curl.se) to quickly test an API endpoint
+
+Getting some metadata (read or `GET` operation)
 ```console
-curl https://catfact.ninja/fact
+curl <URL>
+```
 
-{"fact":"Neutering a cat extends its life span by two or three years.","length":60}
-
+Creating a resource (create or `PUT` operation)
+```console
 curl -X PUT <URL>
      -d "PUT request data"
+```
+
+
+```console
+curl https://catfact.ninja/fact
+```
+
+```console
+{"fact":"Neutering a cat extends its life span by two or three years.","length":60}
 ```
 
 ```console
