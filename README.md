@@ -19,16 +19,11 @@ flowchart LR;
 ```
 
 ```mermaid
-sequenceDiagram
-    participant Client
-    participant API
-    participant Server
-    Client->>API: HTTP request - GET /endpoint/
-    API->>Server: request metadata
-    Server->>API: retrieve metadata
-    API->>Client: HTTP response 200 OK + JSON metadata
-    <!-- Client->>API: set mermaid data on iframe
-    API->>API: render mermaid -->
+sequenceDiagram;
+    Client ->> API: HTTP request `GET /endpoint/`
+    API ->> Server: request metadata
+    Server ->> API: retrieve metadata
+    API ->> Client: HTTP response 200 OK + `JSON metadata`
 ```
 
 
