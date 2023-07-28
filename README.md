@@ -14,7 +14,20 @@ flowchart LR
 ```
 
 ```mermaid
-flowchart LR;
+%%{init: {"flowchart": {"htmlLabels": false}} }%%
+flowchart LR
+    markdown["Client"]
+    newLines["HTTP request:
+    `GET /endoint`"]
+    markdown["API"]
+    markdown["Server"]
+    markdown --> newLines
+    newLines za````markdown --> 
+```
+
+
+```mermaid
+flowchart LR
     Client---|HTTP request: `GET /endoint` |API
     API---|Server
     Server---|API
@@ -22,7 +35,7 @@ flowchart LR;
 ``````
 
 ```mermaid
-  graph TD;
+  graph TD
     A[Client] -- API: HTTP request `GET /endpoint/` --> B[API] 
     B[API] -- request metadata --> C[Server]
     C[Server] -- retrieve metadata --> B[API]
