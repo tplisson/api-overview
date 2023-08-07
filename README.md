@@ -63,25 +63,25 @@ For example:
 Use [cURL](https://curl.se) to quickly test an API endpoint
 
 Getting some metadata (read or `GET` operation)
-```console
+```shell
 curl <URL>
 ```
 
 For example:
-```console
+```shell
 curl https://catfact.ninja/fact
 {"fact":"Neutering a cat extends its life span by two or three years.","length":60}
 ```
 
 
 Creating a resource (create or `POST` operation)
-```console
+```shell
 curl -X POST <URL>
      -d "request data in JSON"
 ```
 
 For example:
-```console
+```shell
 curl -X POST https://reqbin.com/echo/post/json \
    -H 'Content-Type: application/json' \
    -d '{"login":"my_login","password":"my_password"}'
@@ -107,7 +107,7 @@ https://www.postman.com
 Here's an example of Google Maps API
 
 
-```console
+```shell
 curl -L -X GET 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key=<YOUR_GOOGLE_MAPS_API_KEY_GOES_HERE>'
 {
    "candidates" : [
