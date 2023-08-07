@@ -94,7 +94,7 @@ curl -X POST https://reqbin.com/echo/post/json \
 Output in [JSON](https://www.w3schools.com/js/js_json_intro.asp)
 
 
-### POSTMan  
+### Postman  
 https://www.postman.com
 
 <p align="center">
@@ -140,7 +140,7 @@ curl -L -X GET 'https://maps.googleapis.com/maps/api/place/findplacefromtext/jso
 }
 ```
 
-Sample Python script to 
+Sample Python script to retrieve some Google Maps APIs
 ```python
 import googlemaps
 from datetime import datetime
